@@ -36,8 +36,8 @@ jobs:
           git checkout main       
       - name: Get dependencies
         run: |
-         go mod download
-
+          export GO111MODULE=on
+          go mod download
         
       - name: Compile Go code
         run: |
