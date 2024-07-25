@@ -68,4 +68,4 @@ jobs:
             build/belfast-windows-amd64.exe
             build/belfast-darwin-amd64
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
