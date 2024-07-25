@@ -23,7 +23,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.20
-
+      - name: Set GOPATH
+        run: echo "GOPATH=$(go env GOPATH)" >> $GITHUB_ENV
       - name: Compile Go code
         run: |
           GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o build/belfast-${{ matrix.goos }}-${{ matrix.goarch }}
