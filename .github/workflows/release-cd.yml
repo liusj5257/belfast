@@ -36,7 +36,7 @@ jobs:
           git checkout main       
       - name: Get dependencies
         run: |
-         go get -v -t -d ./...
+         go mod download
 
         
       - name: Compile Go code
