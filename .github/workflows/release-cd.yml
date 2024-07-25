@@ -27,19 +27,17 @@ jobs:
       - name: Set GOPATH
         run: echo "GOPATH=/home/runner/work/belfast/belfast" >> $GITHUB_ENV
 
-        
-      - name: Get dependencies
-        run: |
-          go get github.com/akamensky/argparse
-          ls
-
       - name: Clone belfast repository
         run: |
           mkdir -p $GOPATH/src/github.com/ggmolly
           cd $GOPATH/src/github.com/ggmolly
           git clone https://github.com/ggmolly/belfast.git
           cd belfast
-          git checkout main
+          git checkout main       
+      - name: Get dependencies
+        run: |
+         go get -v -t -d ./...
+
         
       - name: Compile Go code
         run: |
