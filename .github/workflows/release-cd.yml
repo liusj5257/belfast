@@ -33,7 +33,7 @@ jobs:
         
       - name: Compile Go code
         run: |
-          ls
+          pwd 
           GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o build/belfast-${{ matrix.goos }}-${{ matrix.goarch }}
 
       - name: Upload binary artifact
