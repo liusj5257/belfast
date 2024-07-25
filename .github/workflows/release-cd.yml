@@ -31,7 +31,15 @@ jobs:
       - name: Get dependencies
         run: |
           go get github.com/akamensky/argparse
-          go get github.com/ggmolly/belfast@main
+          ls
+
+      - name: Clone belfast repository
+        run: |
+          mkdir -p $GOPATH/src/github.com/ggmolly
+          cd $GOPATH/src/github.com/ggmolly
+          git clone https://github.com/ggmolly/belfast.git
+          cd belfast
+          git checkout main
         
       - name: Compile Go code
         run: |
