@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	versionURL = "https://raw.githubusercontent.com/ggmolly/belfast-data/main/versions.json"
+	versionURL = "https://gitee.com/aqeqqq/belfast-data/raw/main/versions.json"
 )
 
 var (
