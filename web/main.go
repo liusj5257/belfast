@@ -2,7 +2,7 @@ package web
 
 import (
 	"time"
-
+ 	"fmt"
 	"github.com/ggmolly/belfast/logger"
 	"github.com/ggmolly/belfast/misc"
 	"github.com/ggmolly/belfast/web/dto"
@@ -292,9 +292,10 @@ func StartWeb() {
 		)
 	}
 	logger.LogEvent("Web", "Server", "Starting web server", logger.LOG_LEVEL_INFO)
-	if err := app.Listen("127.0.0.1:3566"); err == nil {
-		logger.LogEvent("Web", "Server", "Listening on 127.0.0.1:3566", logger.LOG_LEVEL_INFO)
+	if err := app.Listen("127.0.0.1:3566"); err != nil { // 更改为不等于nil的检查
+			logger.LogEvent("Web", "Server", "Failed to start web server", logger.LOG_LEVEL_ERROR)
+			fmt.Println("Error starting the web server:", err) // 直接输出错误信息
 	} else {
-		logger.LogEvent("Web", "Server", "Failed to start web server", logger.LOG_LEVEL_ERROR)
+			logger.LogEvent("Web", "Server", "Listening on 127.0.0.1:3566", logger.LOG_LEVEL_INFO)
 	}
 }
