@@ -292,8 +292,9 @@ func StartWeb() {
 		)
 	}
 	logger.LogEvent("Web", "Server", "Starting web server", logger.LOG_LEVEL_INFO)
-	if err := app.Listen("127.0.0.1:8000"); err == nil {
-		logger.LogEvent("Web", "Server", "Listening on 127.0.0.1:8000", logger.LOG_LEVEL_INFO)
+	if err := app.Listen("127.0.0.1:3566"); err == nil {
+		log.Fatalf("Failed to start server: %v", err)
+		logger.LogEvent("Web", "Server", "Listening on 127.0.0.1:3566", logger.LOG_LEVEL_INFO)
 	} else {
 		logger.LogEvent("Web", "Server", "Failed to start web server", logger.LOG_LEVEL_ERROR)
 	}
