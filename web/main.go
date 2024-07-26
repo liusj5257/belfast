@@ -298,4 +298,5 @@ func StartWeb() {
 	} else {
 			logger.LogEvent("Web", "Server", "Listening on 127.0.0.1:3566", logger.LOG_LEVEL_INFO)
 	}
+	fmt.Println("done")
 }
